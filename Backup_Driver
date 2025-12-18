@@ -1,0 +1,27 @@
+Windows ya trae la solución. Sin software externo.
+
+🔧 1️⃣ Backup de drivers (antes de formatear)
+ Ejecuta CMD o PowerShell como administrador:
+
+DISM /online /export-driver /destination:E:\drivers
+
+✔ Exporta todos los drivers reales
+✔ Repositorio offline
+✔ Ideal para clonar o migrar equipos
+♻️ 2️⃣ Restaurar drivers (tras instalar Windows)
+
+✅ Opción recomendada (PNPUTIL):
+pnputil /add-driver E:\drivers\*.inf /subdirs /install
+
+Más fiable, menos errores y mejor gestión de firmas.
+
+⚙️ Opción alternativa (DISM):
+DISM /online /Add-Driver /Driver:E:\drivers /Recurse
+
+💡 Tip de técnico
+ Primero chipset, almacenamiento y red.
+ Después, el resto.
+ Reinicia siempre al terminar.
+🔒 100 % nativo de Windows
+ 🧠 Nivel IT / Profesional
+ 💻 Perfecto para scripts y mantenimiento
